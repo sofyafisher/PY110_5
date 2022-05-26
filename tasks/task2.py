@@ -1,6 +1,8 @@
 def wave(str_):
     wave_list = []
-    for index, value in enumerate(str_):
-        word = str_.replace(str_[index], str_[index].upper())
-        wave_list.append(word)
+    word_list = list(str_)
+    for index in range(len(word_list)):
+        word_list[index] = word_list[index].upper()
+        wave_list.append("".join(word_list))
+        word_list = [x.lower() for x in word_list]
     return wave_list
